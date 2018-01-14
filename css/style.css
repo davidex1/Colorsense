@@ -69,3 +69,23 @@ body {
 a:hover {
    background: rgba(240, 240, 240, 0.7); 
 }
+
+#level1button:hover {
+    background: rgba(240, 120, 100, 0.7); 
+}
+
+#level2button:hover {
+    background: rgba(250, 250, 100, 0.7);
+}
+
+#level3button:hover {
+    background: rgba(100, 250, 100, 0.7);
+}
+
+#level4button:hover {
+    background: rgba(100, 170, 240, 0.7);
+}
+
+#level5button:hover {
+    background: rgba(250, 100, 250, 0.7);
+}
