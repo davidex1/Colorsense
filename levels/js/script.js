@@ -1,6 +1,10 @@
 
 $(function(){
     
+    setTimeout(function(){
+        window.scrollTo(0, 1);
+    }, 0);
+    
     let timeLeft = 20;
     let counter = setInterval(() => {
         $("#timer").html(`Time: ${timeLeft}`);
