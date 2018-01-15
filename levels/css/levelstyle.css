@@ -91,3 +91,14 @@ body {
 #color {
     display: none;
 }
+
+.blink {
+    animation-name: blinker;
+    animation-duration: 0.3s;
+}
+
+@keyframes blinker {
+    0% {border: 0px solid #eee;}
+    50% {border: 2px solid #eee;}
+    100% {border: 0px solid #eee;}
+}

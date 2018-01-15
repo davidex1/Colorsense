@@ -1,9 +1,6 @@
-window.addEventListener("load", function() {
-     setTimeout(function(){window.scrollTo(0, 1);}, 0);
-});
-
-
 $(function(){
+    
+    let fullScreen = () => {setTimeout(function(){window.scrollTo(0, 1);}, 0);};
     
     let timeLeft = 20;
     let counter = setInterval(() => {
@@ -44,11 +41,29 @@ $(function(){
             if ($(x).css("background-color") == sample.css("background-color")) {
                 $(x).css("border", "2px solid #96ff00");
             } else {
-                $(x).css("border", "2px solid #eee");
+                $(x).addClass("blink");
             }
         });
         
+        
+        let check = () => $(x).css("border").text()
+        
+        
+        
+        
+        
     });
+    
+   /* let squaresArr = $(".square").toArray();
+    let fiveSquares = [];
+    
+    for (let i = 0; i < 5; i++) {
+        fiveSquares.push(squaresArr[Math.floor(Math.random()*squaresArr.length)]);
+                   };
+
+    let fiveSquaresColored = fiveSquares.map((i, x) => { $(x).css("background-color", "black")})*/
+    
+
     
     
     
