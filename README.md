@@ -8,7 +8,6 @@
 * Different operations on arrays
 
 #### To do:
-* Always 5 squares with sample color
 * Event handler for all correct squares selected
  
 
