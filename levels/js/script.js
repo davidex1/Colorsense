@@ -3,12 +3,12 @@ $(function(){
     let fullScreen = () => {setTimeout(function(){window.scrollTo(0, 1);}, 0);};
     
     // time countdown
-    let timeLeft = 10;
+    let timeLeft = 15;
     let counter = setInterval(() => {
         $("#timer").html(`Time: ${timeLeft}`);
         if (timeLeft == 0) {
             clearInterval(counter);
-            $(".gameOver, .button").addClass("show");
+            $(".toMenu, .button").addClass("show");
             $(".squaresContainer").css("display", "none");
         }
         timeLeft--;
@@ -79,12 +79,12 @@ $(function(){
         }
     })}
     
-    setTimeout(() => {getGreenBorders(); checkResult();}, 10000);
+    setTimeout(() => {getGreenBorders(); checkResult();}, 15000);
     
     let checkResult = () => {
         if (sampleColorArr.length == greenBorders.length) {
-            alert("you win!");
-        }
+            alert("Congratulations! You win!");
+        } else alert("Time's Up :(")
     }
     
     

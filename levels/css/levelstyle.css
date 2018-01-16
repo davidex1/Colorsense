@@ -69,17 +69,25 @@ body {
     transition: display 1s;
 }
 
-.button:hover {
+.button:hover, .toMenu:hover {
     background: rgba(240, 240, 240, 0.7);
 }
 .smallContainer {
     text-align: center;
 }
     
-.gameOver {
-    margin-top: 100px;
+.toMenu {
+    width: 100px;
+    padding: 10px;
+    
+    margin: auto;
+    margin-top: 10px;
     display: none;
     transition: display 2s;
+    
+    font-size: 16px;
+    background: rgba(240, 240, 240, 0.5);
+    border-radius: 14px;
 }
 
 .show {
