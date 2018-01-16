@@ -2,6 +2,7 @@ $(function(){
     
     let fullScreen = () => {setTimeout(function(){window.scrollTo(0, 1);}, 0);};
     
+    // time countdown
     let timeLeft = 20;
     let counter = setInterval(() => {
         $("#timer").html(`Time: ${timeLeft}`);
@@ -11,16 +12,18 @@ $(function(){
         }
         timeLeft--;
     },1000)
-
+    
+    // restart level button
     const restart = $("#restart").click(() => {location.reload();})
 
     
-    
-    let squares = $(".square").map((i, x) => {
+    // array with all squares
+    let randColor = $(".square").map((i, x) => {
         
-        const colorId = $("#color").text();
+        const colorId = $("#color").text(); // check the color of level
         let sample = $("#sample");
         
+        //chceck the color of level and pick correct palette
         let colorsPalette;
         if (colorId == "red") { 
             colorsPalette = ["#ff0000", "#e50000", "#cc0000", "#b20000", "#990000", "#ff4c4c", "#ff6666", "#ff7f7f"];
@@ -34,34 +37,29 @@ $(function(){
             colorsPalette = ["#a020f0", "#901cd8", "#8019c0", "#7016a8", "#601390", "#c679f6", "#cf8ff7", "#d9a5f9"];
         }
         
+        // fill the squares
         $(x).css("background-color", colorsPalette[Math.floor(Math.random()*colorsPalette.length)]);
         sample.css("background-color", colorsPalette[Math.floor(Math.random()*colorsPalette.length)]);
         
+        // event for clickking squares
         $(x).click(() => {
             if ($(x).css("background-color") == sample.css("background-color")) {
                 $(x).css("border", "2px solid #96ff00");
             } else {
                 $(x).addClass("blink");
             }
-        });
-        
-        
-        let check = () => $(x).css("border").text()
-        
-        
-        
-        
-        
+        });   
     });
     
-   /* let squaresArr = $(".square").toArray();
-    let fiveSquares = [];
+    let squaresArr = $(".square");
+    let getSampleColor = document.getElementById("sample").style.backgroundColor; //jQuery couldn't pick the color
     
-    for (let i = 0; i < 5; i++) {
-        fiveSquares.push(squaresArr[Math.floor(Math.random()*squaresArr.length)]);
-                   };
-
-    let fiveSquaresColored = fiveSquares.map((i, x) => { $(x).css("background-color", "black")})*/
+    console.log(getSampleColor);
+    
+    // provide at least 5 squares with the same color like in sample. In case when randColor() haven't done it.
+    for (let i = 0; i < 5; i++){
+        $(squaresArr[Math.floor(Math.random()*squaresArr.length)]).css("background-color", getSampleColor);
+    }
     
 
     
