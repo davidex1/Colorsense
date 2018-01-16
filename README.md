@@ -8,7 +8,8 @@
 * Different operations on arrays
 
 #### To do:
-* Event handler for all correct squares selected
+* Transitions
+* Message when win game
  
 
 [Click to play ](https://davidex1.github.io/colorSense/)
