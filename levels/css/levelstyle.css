@@ -24,8 +24,6 @@ body {
 #timer {
     display: inline-block;
     margin: 20px 20px;
-    text-align: left;
-    
 }
 
 #sample {
@@ -41,6 +39,7 @@ body {
     margin: 0 auto;
     margin-top: 10%;
     text-align: center;
+    transition: display 2s;
 }
 
 .square {
@@ -52,11 +51,11 @@ body {
     transition: background-color 2s;
 }
 
-.button {    
-    display: inline-block;
+.button { 
     padding: 10px;
-    min-width: 10px;
-    max-width: 240px;
+    width: 100px;
+    margin: auto;
+    margin-top: 10px;
     
     font-size: 16px;
     font-family: Arial;
@@ -66,8 +65,8 @@ body {
     color: white;
     background: rgba(240, 240, 240, 0.5);
     border-radius: 14px;
-    visibility: hidden;
-    transition: visibility 1s;
+    display: none;
+    transition: display 1s;
 }
 
 .button:hover {
@@ -77,15 +76,15 @@ body {
     text-align: center;
 }
     
-.gameOver { 
-    display: inline-block;
-    margin-right: 10px;
-    visibility: hidden; 
-    transition: visibility 2s;
+.gameOver {
+    margin-top: 100px;
+    display: none;
+    transition: display 2s;
 }
 
 .show {
-    visibility: visible;
+    display: block;
+    transition: display 1s;
 }
 
 #color {

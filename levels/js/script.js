@@ -3,12 +3,13 @@ $(function(){
     let fullScreen = () => {setTimeout(function(){window.scrollTo(0, 1);}, 0);};
     
     // time countdown
-    let timeLeft = 20;
+    let timeLeft = 10;
     let counter = setInterval(() => {
         $("#timer").html(`Time: ${timeLeft}`);
         if (timeLeft == 0) {
             clearInterval(counter);
             $(".gameOver, .button").addClass("show");
+            $(".squaresContainer").css("display", "none");
         }
         timeLeft--;
     },1000)
@@ -51,15 +52,48 @@ $(function(){
         });   
     });
     
-    let squaresArr = $(".square");
+    let squaresArr = document.getElementsByClassName("square");
     let getSampleColor = document.getElementById("sample").style.backgroundColor; //jQuery couldn't pick the color
-    
-    console.log(getSampleColor);
-    
-    // provide at least 5 squares with the same color like in sample. In case when randColor() haven't done it.
-    for (let i = 0; i < 5; i++){
-        $(squaresArr[Math.floor(Math.random()*squaresArr.length)]).css("background-color", getSampleColor);
+
+    // provide squares with the same color like in sample. In case when randColor() haven't done it.
+    for (let i = 0; i < 4; i++){
+        squaresArr[Math.floor(Math.random()*squaresArr.length)].style.backgroundColor = getSampleColor;
+        
     }
+    
+    let sampleColorArr = [];
+    let greenBorders = [];
+    
+    let squaresArrConv = Array.from(squaresArr);
+    
+    let getSampleColorSquares = squaresArrConv.map((i, x) => {
+        if (squaresArrConv[x].style.backgroundColor == getSampleColor) {
+            sampleColorArr.push(x);
+        }
+    })
+    
+    
+    let getGreenBorders = () => { squaresArrConv.map((i, x) => {
+        if (squaresArrConv[x].style.border == "2px solid rgb(150, 255, 0)") {
+            greenBorders.push(x);
+        }
+    })}
+    
+    setTimeout(() => {getGreenBorders(); checkResult();}, 10000);
+    
+    let checkResult = () => {
+        if (sampleColorArr.length == greenBorders.length) {
+            alert("you win!");
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+  
     
 
     
