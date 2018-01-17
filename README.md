@@ -9,7 +9,7 @@
 
 #### To do:
 * Transitions
-* Message when win game
+* Clean CSS
  
 
 [Click to play ](https://davidex1.github.io/colorSense/)
